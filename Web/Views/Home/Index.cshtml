@@ -1,0 +1,70 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<div class="jumbotron">
+    <h1>Inventory Management</h1>   
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <form class="form-horizontal">
+            <fieldset>
+                <!-- Form Name -->
+                <div class="form-group row">
+                    <label class="control-label col-md-4" for="Mortgage">Choose Command</label>
+                    <div class="col-md-4">
+                        <select id="option-mortgagetype" class="selectpicker form-control show-tick"></select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div>
+                        <h2>Generated Report</h2>
+                        <table id="table-mortgage" class="table table-striped table-bordered" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>Item Name</th>
+                                    <th>Bought At</th>
+                                    <th>Sold At</th>
+                                    <th>Available Qty</th>
+                                    <th>Value</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+
+                </div>
+                <div>
+                    <table id="table-mortgage" class="table table-striped table-bordered" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th colspan="4">TotalValue</th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div>
+                    <table id="table-mortgage" class="table table-striped table-bordered" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th colspan="4">Profit since previous report</th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+<script>(function ($) {
+    GetAllCommandTypes();
+    });</script>
