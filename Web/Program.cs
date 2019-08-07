@@ -27,7 +27,7 @@ namespace InventoryManagement.Web
                 {
                     var appdbContext = services.GetRequiredService<AppDbContext>();
                     await AppDbContextSeed.SeedAsync(appdbContext);
-
+                    //testdatabase;
                 }
                 catch (Exception ex)
                 {
