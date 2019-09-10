@@ -48,7 +48,7 @@ namespace InventoryManagement.Web.Controllers
             var report = await _itemRepository.Report();
             var previousReport = (await _reportHistoryRepository.ListAllAsync()).LastOrDefault() ?? new ReportHistory();
             var itemReportSummaryViewModel = new ItemReportSummaryViewModel();
-            foreach (Item i in report.Items)
+            foreach (Item i in report)
             {
                 var _itemReportViewModel = new ItemReportViewModel();
                 _itemReportViewModel.ItemName = i.Name;
@@ -57,12 +57,13 @@ namespace InventoryManagement.Web.Controllers
                 _itemReportViewModel.AvailableQty = i.Quantity;
                 _itemReportViewModel.Value = i.CostPrice * i.Quantity;
                 itemReportSummaryViewModel.itemReportViewModels.Add(_itemReportViewModel);
-            }          
-            itemReportSummaryViewModel.TotalValue = report.CurrentTotal();
+            }    
+            
+            itemReportSummaryViewModel.TotalValue = report.Select(x => x.CostPrice * x.Quantity).Sum();
             itemReportSummaryViewModel.ProfitSincePreviousReport = previousReport.CurrentProfit;
             var reporthistory = new ReportHistory();
             reporthistory.LastProfit = previousReport.CurrentProfit;
-            reporthistory.LastTotal = report.CurrentTotal();
+            reporthistory.LastTotal = report.Select(x => x.CostPrice * x.Quantity).Sum();
             reporthistory.CurrentProfit = 0;
             await _reportHistoryRepository.AddAsync(reporthistory);
             return Ok(itemReportSummaryViewModel);

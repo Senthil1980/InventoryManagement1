@@ -5,16 +5,13 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Swashbuckle.AspNetCore.Swagger;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using InventoryManagement.Infrastructure.Data;
 using InventoryManagement.ApplicationCore.Interfaces;
-using InventoryManagement.ApplicationCore.Services;
+using InventoryManagement.Infrastructure.Data;
 using InventoryManagement.Infrastructure.Logging;
+using InventoryManagement.Service;
 
 namespace InventoryManagement.Web
 {

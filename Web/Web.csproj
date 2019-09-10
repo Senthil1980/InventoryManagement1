@@ -29,13 +29,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ApplicationCore\ApplicationCore.csproj" />
-  </ItemGroup>
-
-
-  <ItemGroup>
-    <Reference Include="Infrastructure">
-      <HintPath>..\Infrastructure\bin\Debug\netcoreapp2.2\Infrastructure.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
+    <ProjectReference Include="..\Services\Service.csproj" />
   </ItemGroup>
 
 </Project>

@@ -22,11 +22,11 @@ namespace InventoryManagement.Infrastructure.Data
         {
             return await _appDbContext.Set<T>().FindAsync(Id);
         }
-        public async Task<IReadOnlyList<T>> ListAllAsync()
+        public async Task<List<T>> ListAllAsync()
         {
             return await _appDbContext.Set<T>().ToListAsync();
         }
-        public async Task<IReadOnlyList<T>> ListAllAsync(ISpecification<T> spec)
+        public async Task<List<T>> ListAllAsync(ISpecification<T> spec)
         {
             return await ApplySpecification(spec).ToListAsync();
         }

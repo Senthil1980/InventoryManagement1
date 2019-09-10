@@ -1,14 +1,10 @@
-﻿using InventoryManagement.ApplicationCore.Entities;
-using InventoryManagement.ApplicationCore.Exceptions;
-using InventoryManagement.ApplicationCore.Interfaces;
-using InventoryManagement.ApplicationCore.Specifications;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace InventoryManagement.ApplicationCore.Services
+namespace InventoryManagement.Service
 {
     public class ItemService : IItemService
     {
@@ -60,16 +56,27 @@ namespace InventoryManagement.ApplicationCore.Services
 
         }
 
-        public async Task<ItemReportService> Report()
+        public async Task<List<Item>> Report()
         {
-            var report = new ItemReportService();
-             report.Items.AddRange(await _itemRepository.ListAllAsync(new ITemSpecification(null, "")));
-            if(!report.Items.Any())
+           
+            var listItem = await _itemRepository.ListAllAsync(new ITemSpecification(null, ""));
+            if (!report.Items.Any())
             {
                 _logger.LogInformation("No data found");
             }
             return report;
         }
+
+        //public async Task<ItemReportService> Report()
+        //{
+        //    var report = new ItemReportService();
+        //     report.Items.AddRange(await _itemRepository.ListAllAsync(new ITemSpecification(null, "")));
+        //    if(!report.Items.Any())
+        //    {
+        //        _logger.LogInformation("No data found");
+        //    }
+        //    return report;
+        //}
 
         public async Task<Item> UpdateBuy(String ItemName, int Quantity)
         {

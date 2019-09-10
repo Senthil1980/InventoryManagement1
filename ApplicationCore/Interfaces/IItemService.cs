@@ -8,11 +8,12 @@ namespace InventoryManagement.ApplicationCore.Interfaces
 {
     public interface IItemService
     {
-        Task<IReadOnlyList<Item>> ListAll();
+        Task<List<Item>> ListAll();
         Task<Item> UpdateBuy(String ItemName, int Quantity);
         Task<Item> UpdateSell(String ItemName, int Quantity);
         Task<Item> CreateItemAsync(Item item);
         Task<Item> deleteAsync(String  itemName);
-        Task<ItemReportService> Report();     
+        Task<List<Item>> Report();
+
     }
 }

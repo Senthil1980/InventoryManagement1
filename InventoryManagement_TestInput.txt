@@ -1,0 +1,27 @@
+create Book01 10.50 13.79 = {  "name": "Book01",  "costPrice": 10.50,  "sellPrice": 13.79,  "quantity": 0,  "id": 0}
+create Food01 1.47 3.98  = {  "name": "Food01",  "costPrice": 1.47,  "sellPrice": 3.98,  "quantity": 0,  "id": 0}
+create Med01 30.63 34.29  = {  "name": "Med01",  "costPrice": 30.63,  "sellPrice": 34.29,  "quantity": 0,  "id": 0}
+create Tab01 57.00 84.98  = {  "name": "Tab01",  "costPrice": 57.00,  "sellPrice": 84.98,  "quantity": 0,  "id": 0}
+updateBuy Tab01 100 = {  "quantity": 100 }
+updateSell Tab01 2 = = {  "quantity": 2 }
+updateBuy Food01 500 = {  "quantity": 500 }
+updateBuy Book01 100 = {  "quantity": 100 }
+updateBuy Med01 100 = {  "quantity": 100 }
+updateSell Food01 1 = {  "quantity": 1}
+updateSell Food01 1 = {  "quantity": 1 }
+updateSell Tab01 2 = {  "quantity": 2 }
+report - generated
+delete Book01
+
+
+updateSell Tab01 5 = {  "quantity": 5 }
+create Mobile01 10.51 44.56 = {  "name": "Mobile01",  "costPrice": 10.51,  "sellPrice": 44.56,  "quantity": 0,  "id": 0}
+updateBuy Mobile01 250 = {  "quantity": 250 }
+
+UpdateSell
+===========
+updateSell Food01 5 = {  "quantity": 5 }
+updateSell Mobile01 4 = {  "quantity": 4 }
+updateSell Med01 10 = {  "quantity": 10 }
+report
+

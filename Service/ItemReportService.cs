@@ -1,9 +1,6 @@
-﻿using InventoryManagement.ApplicationCore.Entities;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
-namespace InventoryManagement.ApplicationCore
+namespace InventoryManagement.Service.Services
 {
     public class ItemReportService
     {      
