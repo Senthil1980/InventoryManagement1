@@ -13,7 +13,7 @@ namespace InventoryManagement.ApplicationCore.Entities
         /** item sell price **/
         public decimal SellPrice { get; set; }
         /** item quantity on stock **/
-        public int Quantity { get; set; }       
+        public int Quantity { get; set; }      
 
        
 

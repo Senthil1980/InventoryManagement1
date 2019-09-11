@@ -8,6 +8,7 @@ using InventoryManagement.ApplicationCore.Specifications;
 using InventoryManagement.Web.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using AutoMapper;
 
 namespace InventoryManagement.Web.Controllers
 {
@@ -71,7 +72,7 @@ namespace InventoryManagement.Web.Controllers
         // POST: api/Item
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] Item newItem)
-        {
+        {          
             var item = await _itemRepository.CreateItemAsync(newItem);
             if (item == null)
             {

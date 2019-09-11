@@ -4,7 +4,6 @@ using InventoryManagement.ApplicationCore.Interfaces;
 using InventoryManagement.ApplicationCore.Entities;
 using InventoryManagement.Web.Controllers;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace InventoryManagement.tests.UnitTests
 {
